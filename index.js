@@ -24,9 +24,22 @@ const topHtml = `<!DOCTYPE html>
     <title>Document</title>
   </head>
   <body>`;
+const bottomHtml = `</body>
+</html>`;
 //gonna store employee objects and push user inputs into
-employeeArr = [];
-loop = true;
+const employeeArr = [];
+let loop = true;
+
+const checkEmployeeType = (employee) => {
+  switch (employee.getRole()) {
+    case "Engineer":
+      return `<a href = "${employee.getGithub()}" target="_blank">Github</a>`;
+    case "Intern":
+      return `School: ${employee.getSchool()}`;
+    case "Manager":
+      return `Office: ${employee.getOfficeNumber()}`;
+  }
+};
 
 const buildEmployees = (employeeArr) => {
   console.log(employeeArr);
@@ -35,12 +48,27 @@ const buildEmployees = (employeeArr) => {
     if (err) throw err;
     console.log("Saved!");
   });
-  // employeeArr.forEach((element) => {
-  //   //append lower half with loop info
-  //   //check each items role
-  //   //create new cards depending on role
-  //   //add bottom half
-  // });
+  employeeArr.forEach((element) => {
+    //append lower half with loop info
+    //check each items role
+    //create new cards depending on role
+    //add bottom half
+    const card = `<div class="card m-2" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Employee Name ${element.getName()}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Job ${element.getRole()}</li>
+        <li class="list-group-item">ID ${element.getId()}</li>
+        <li class="list-group-item"><a href= "mailto: ${element.getEmail()}">${element.getEmail()}</a></li>
+        <li class="list-group-item">${checkEmployeeType(element)}</li>
+      </ul>
+    </div>`;
+    fs.appendFile("./return/index1.html", card, function (err) {
+      if (err) throw err;
+      console.log("Saved! Card");
+    });
+  });
 };
 
 const start = async () => {
