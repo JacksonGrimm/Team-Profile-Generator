@@ -11,7 +11,7 @@ describe("Engineer", () => {
     const test = new Engineer("Tim", "720", "TimEmail@gmail", "Github.com");
     expect(test.getRole()).toBe("Engineer");
   });
-  it("Role should return the Github", () => {
+  it("Github should return the Github", () => {
     const test = new Engineer("Tim", "720", "TimEmail@gmail", "Github.com");
     expect(test.getGithub()).toBe("Github.com");
   });
