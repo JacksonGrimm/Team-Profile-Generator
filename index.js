@@ -28,8 +28,7 @@ const topHtml = `<!DOCTYPE html>
   <h1 class="font-weight-bold">The Team</h1>
 </div>
 <main class="d-flex justify-content-evenly">`;
-const bottomHtml = `</main> </body>
-</html>`;
+
 //gonna store employee objects and push user inputs into
 const employeeArr = [];
 let loop = true;
@@ -59,7 +58,7 @@ const buildEmployees = (employeeArr) => {
     //add bottom half
     const card = `<div class="card m-2 shadow" style="width: 18rem">
       <div class="card-body bg-success">
-        <h5 class="card-title text-white">Employee Name ${element.getName()}</h5>
+        <h5 class="card-title text-white">${element.getName()}</h5>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Job: ${element.getRole()}</li>
