@@ -1,4 +1,8 @@
 const { prompt } = require("inquirer");
+const Manager = require("./classes/Manager");
+const Engineer = require("./classes/Engineer");
+const Intern = require("./classes/Intern");
+
 //gonna store employee objects and push user inputs into
 employeeArr = [];
 
@@ -49,6 +53,14 @@ const start = async () => {
             message: "Whats the managers office number?",
           },
         ]);
+        employeeArr.push(
+          new Manager(
+            userInput.EmployeeName,
+            userInput.EmployeeId,
+            userInput.employeeEmail,
+            jobDetails.info
+          )
+        );
         break;
       case "Engineer":
         jobDetails = await prompt([
@@ -58,6 +70,14 @@ const start = async () => {
             message: "Whats the Engineers Github?",
           },
         ]);
+        employeeArr.push(
+          new Engineer(
+            userInput.EmployeeName,
+            userInput.EmployeeId,
+            userInput.employeeEmail,
+            jobDetails.info
+          )
+        );
         break;
       case "Intern":
         jobDetails = await prompt([
@@ -67,9 +87,17 @@ const start = async () => {
             message: "Whats the Interns school?",
           },
         ]);
+        employeeArr.push(
+          new Intern(
+            userInput.EmployeeName,
+            userInput.EmployeeId,
+            userInput.employeeEmail,
+            jobDetails.info
+          )
+        );
         break;
     }
-    console.log(jobDetails.info);
+    console.log(employeeArr);
   }
 };
 
