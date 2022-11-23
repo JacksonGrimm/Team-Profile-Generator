@@ -40,6 +40,36 @@ const start = async () => {
       },
     ]);
     console.log(userInput);
+    switch (userInput.employeeJob) {
+      case "Manager":
+        jobDetails = await prompt([
+          {
+            name: "info",
+            type: "input",
+            message: "Whats the managers office number?",
+          },
+        ]);
+        break;
+      case "Engineer":
+        jobDetails = await prompt([
+          {
+            name: "info",
+            type: "input",
+            message: "Whats the Engineers Github?",
+          },
+        ]);
+        break;
+      case "Intern":
+        jobDetails = await prompt([
+          {
+            name: "info",
+            type: "input",
+            message: "Whats the Interns school?",
+          },
+        ]);
+        break;
+    }
+    console.log(jobDetails.info);
   }
 };
 
