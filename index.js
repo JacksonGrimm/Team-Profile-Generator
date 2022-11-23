@@ -55,8 +55,8 @@ const start = async () => {
         ]);
         employeeArr.push(
           new Manager(
-            userInput.EmployeeName,
-            userInput.EmployeeId,
+            userInput.employeeName,
+            userInput.employeeId,
             userInput.employeeEmail,
             jobDetails.info
           )
@@ -72,8 +72,8 @@ const start = async () => {
         ]);
         employeeArr.push(
           new Engineer(
-            userInput.EmployeeName,
-            userInput.EmployeeId,
+            userInput.employeeName,
+            userInput.employeeId,
             userInput.employeeEmail,
             jobDetails.info
           )
@@ -89,8 +89,8 @@ const start = async () => {
         ]);
         employeeArr.push(
           new Intern(
-            userInput.EmployeeName,
-            userInput.EmployeeId,
+            userInput.employeeName,
+            userInput.employeeId,
             userInput.employeeEmail,
             jobDetails.info
           )
