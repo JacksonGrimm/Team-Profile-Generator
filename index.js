@@ -97,8 +97,11 @@ const start = async () => {
         );
         break;
     }
-    console.log(employeeArr);
   }
 };
 
 start();
+console.log(employeeArr);
+employeeArr.forEach((element) => {
+  console.log(element.getName);
+});
