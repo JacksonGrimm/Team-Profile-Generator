@@ -37,7 +37,7 @@ let loop = true;
 const checkEmployeeType = (employee) => {
   switch (employee.getRole()) {
     case "Engineer":
-      return `<a href = "${employee.getGithub()}" target="_blank">Github</a>`;
+      return `<a href = "https://github.com/${employee.getGithub()}" target="_blank">Github</a>`;
     case "Intern":
       return `School: ${employee.getSchool()}`;
     case "Manager":
