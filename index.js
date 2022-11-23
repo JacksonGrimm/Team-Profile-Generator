@@ -23,8 +23,12 @@ const topHtml = `<!DOCTYPE html>
     ></script>
     <title>Document</title>
   </head>
-  <body>`;
-const bottomHtml = `</body>
+  <body>
+  <div class="bg-primary">
+  <h1 class="font-weight-bold">The Team</h1>
+</div>
+<main class="d-flex justify-content-evenly">`;
+const bottomHtml = `</main> </body>
 </html>`;
 //gonna store employee objects and push user inputs into
 const employeeArr = [];
@@ -53,13 +57,13 @@ const buildEmployees = (employeeArr) => {
     //check each items role
     //create new cards depending on role
     //add bottom half
-    const card = `<div class="card m-2" style="width: 18rem">
-      <div class="card-body">
-        <h5 class="card-title">Employee Name ${element.getName()}</h5>
+    const card = `<div class="card m-2 shadow" style="width: 18rem">
+      <div class="card-body bg-success">
+        <h5 class="card-title text-white">Employee Name ${element.getName()}</h5>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Job ${element.getRole()}</li>
-        <li class="list-group-item">ID ${element.getId()}</li>
+        <li class="list-group-item">Job: ${element.getRole()}</li>
+        <li class="list-group-item">ID: ${element.getId()}</li>
         <li class="list-group-item"><a href= "mailto: ${element.getEmail()}">${element.getEmail()}</a></li>
         <li class="list-group-item">${checkEmployeeType(element)}</li>
       </ul>
