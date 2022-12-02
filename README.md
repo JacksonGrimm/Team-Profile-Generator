@@ -8,6 +8,6 @@ This is cli team profile gen, that takes a user input and appends it to the page
 
 ![Alt text](screenshot.png)
 
-##install
+## install
 
 clone the repo do an npm i and run the index.js
